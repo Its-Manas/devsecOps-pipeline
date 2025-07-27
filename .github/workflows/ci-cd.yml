@@ -1,6 +1,5 @@
 name: DevSecOps CI/CD
 
-
 on:
   push:
     branches:
