@@ -27,13 +27,13 @@ jobs:
     - name: Run tfsec (Terraform Security Scan)
       uses: aquasecurity/tfsec-action@v1.0.0
       with:
-        directory: ./terraform
+       working_directory: ./terraform
 
     - name: Build Docker image
       run: docker build -t myapp:latest .
 
     - name: Scan Docker image with Trivy
-      uses: aquasecurity/trivy-action@master
+      uses: aquasecurity/trivy-action@0.11.2  # or latest stable version
       with:
         image-ref: myapp:latest
         format: 'table'
